@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-import App from './App.jsx';
-import ErrorPage from './pages/ErrorPage.jsx';
-import AboutMePage from './pages/AboutMePage.jsx';
-import PortfolioPage from './pages/PortfolioPage.jsx';
-import ContactPage from './pages/ContactPage.jsx';
-import ResumePage from './pages/ResumePage.jsx';
-
+import App from './App';
+import ErrorPage from './pages/ErrorPage';
+import AboutMePage from './pages/AboutMePage';
+import PortfolioPage from './pages/PortfolioPage';
+import ContactPage from './pages/ContactPage';
+import ResumePage from './pages/ResumePage';
 
 const router = createBrowserRouter([
   {
@@ -23,15 +23,15 @@ const router = createBrowserRouter([
         element: <AboutMePage />,
       },
       {
-        path: 'portfolio',
+        path: 'Portfolio',
         element: <PortfolioPage />,
       },
       {
-        path: 'contact',
+        path: 'Contact',
         element: <ContactPage />,
       },
       {
-        path: 'resume',
+        path: 'Resume',
         element: <ResumePage />,
       }
     ]
