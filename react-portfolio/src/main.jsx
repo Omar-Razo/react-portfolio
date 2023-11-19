@@ -4,13 +4,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import './index.css';
 
-import App from './App.jsx';
-import ErrorPage from './pages/ErrorPage.jsx';
-import AboutMePage from './pages/AboutMePage.jsx';
-import PortfolioPage from './pages/PortfolioPage.jsx';
-import ContactPage from './pages/ContactPage.jsx';
-import ResumePage from './pages/ResumePage.jsx';
+import App from './App';
+import ErrorPage from './pages/ErrorPage';
+import AboutMePage from './pages/AboutMePage';
+import PortfolioPage from './pages/PortfolioPage';
+import ContactPage from './pages/ContactPage';
+import ResumePage from './pages/ResumePage';
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const router = createBrowserRouter([
   {
