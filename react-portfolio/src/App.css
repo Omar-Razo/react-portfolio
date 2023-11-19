@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+/*  */
+
+.foot-nav {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.foot-nav li {
+  margin-inline: 20px;
+}
