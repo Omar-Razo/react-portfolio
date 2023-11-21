@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  /* colors */
+  --main-color-1: #32322e;
+  --main-accent-color-1: darkorange;
 }
 
 a {
@@ -66,4 +70,34 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* manual edits */
+
+html, body {
+  background-color: var(--main-color-1);
+  color: var(--main-accent-color-1)
+}
+
+.nav-tabs {
+  --bs-nav-tabs-border-color: var(--main-accent-color-1);
+  --bs-nav-link-color: var(--main-accent-color-1);
+  --bs-nav-tabs-link-active-bg: var(--main-accent-color-1);
+  --bs-nav-tabs-link-hover-border-color: var(--main-accent-color-1);
+  --bs-nav-tabs-link-active-border-color: var(--main-color-1);
+  --bs-nav-link-hover-color: var(--main-accent-color-1)
+}
+
+.foot-nav {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.foot-nav li {
+  margin-inline: 20px;
+}
+
+.foot-nav li img {
+  filter: invert(60%) sepia(55%) saturate(3413%) hue-rotate(0deg) brightness(102%) contrast(105%);
 }
