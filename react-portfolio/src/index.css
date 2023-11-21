@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  /* colors */
+  --main-color-1: #32322e;
+  --main-accent-color-1: darkorange;
 }
 
 a {
@@ -27,8 +31,6 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -37,18 +39,20 @@ h1 {
 }
 
 button {
+  background-color: var(--main-accent-color-1);
+  color: var(--main-color-1);
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #fff;
+  color: #fff;
 }
 button:focus,
 button:focus-visible {
@@ -66,4 +70,56 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* manual edits */
+
+html, body, #root {
+  background-color: var(--main-color-1);
+  color: var(--main-accent-color-1);
+  height: 100%;
+
+}
+
+.nav-tabs {
+  justify-content: center;
+  --bs-nav-tabs-border-color: var(--main-accent-color-1);
+  --bs-nav-link-color: var(--main-accent-color-1);
+  --bs-nav-tabs-link-active-bg: var(--main-accent-color-1);
+  --bs-nav-tabs-link-hover-border-color: var(--main-accent-color-1);
+  --bs-nav-tabs-link-active-border-color: var(--main-color-1);
+  --bs-nav-link-hover-color: var(--main-accent-color-1)
+}
+
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  border: 2px solid var(--main-accent-color-1);
+}
+
+.form-element {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
+  margin-block: 1rem;
+  flex: 1 0 auto;
+}
+
+textarea {
+  width: 350px;
+  height: 100px;
+}
+
+.foot-nav {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.foot-nav li {
+  margin-inline: 20px;
+}
+
+.foot-nav li img {
+  filter: invert(60%) sepia(55%) saturate(3413%) hue-rotate(0deg) brightness(102%) contrast(105%);
 }
