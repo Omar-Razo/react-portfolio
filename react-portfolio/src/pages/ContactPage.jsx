@@ -1,22 +1,114 @@
+import { useState } from "react";
+
 const ContactPage = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [errors, setErrors] = useState({});
+
+    const handleInputChange = (e) => {
+        // Getting the value and name of the input which triggered the change
+        const { name, value } = e.target;
+    
+        switch(name) {
+            case 'name':
+                setName(value)
+                if (value === '') {
+                    setErrors(prevErrors => ({
+                        ...prevErrors,
+                        name: 'This field is required'
+                    }));
+                } else {
+                    setErrors(prevErrors => ({
+                        ...prevErrors,
+                        name: null
+                    }));
+                }
+                break
+            case 'email':
+                setEmail(value)
+                if (value === '') {
+                    setErrors(prevErrors => ({
+                        ...prevErrors,
+                        email: 'This field is required'
+                    }));
+                } else {
+                    setErrors(prevErrors => ({
+                        ...prevErrors,
+                        email: null
+                    }));
+                }
+                break
+            case 'message':
+                setMessage(value)
+                if (value === '') {
+                    setErrors(prevErrors => ({
+                        ...prevErrors,
+                        message: 'This field is required'
+                    }));
+                } else {
+                    setErrors(prevErrors => ({
+                        ...prevErrors,
+                        message: null
+                    }));
+                }
+                break
+        }
+    };
+
+    const handleFormSubmit = (e) => {
+        const regex = /.+@.+\..+/
+        // Preventing the default behavior of the form submit (which is to refresh the page)
+        e.preventDefault();
+
+        if (!regex.test(email)) {
+            return alert('incorrect email format')
+        }
+
+        setName('');
+        setEmail('');
+        setMessage('');
+    };
+
     return (
-        <div>
-            <h1>Contact Page</h1>
-            <p>
-            Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-            molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-            magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-            efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-            mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-            posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-            faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-            ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-            dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-            rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-            </p>
+        <div className="">
+            <h1 className="">Contact Me</h1>
+            <form className="form" onSubmit={handleFormSubmit}>
+                <div className="form-element">
+                    <input
+                    value={name}
+                    name="name"
+                    onChange={handleInputChange}
+                    type="text"
+                    placeholder="Your name here!"
+                    />
+                    {errors.name && <span>{errors.name}</span>}
+                </div>
+                <div className="form-element">
+                    <input
+                    value={email}
+                    name="email"
+                    onChange={handleInputChange}
+                    type="email"
+                    placeholder="Valid Email"
+                    />
+                    {errors.email && <span>{errors.email}</span>}
+                </div>
+                <div className="form-element">
+                    <textarea
+                    value={message}
+                    name="message"
+                    onChange={handleInputChange}
+                    placeholder="What should I know?"
+                    />
+                    {errors.message && <span>{errors.message}</span>}
+                </div>
+                <button type="submit" className="form-element">
+                Submit
+                </button>
+            </form>
         </div>
     );
 }
 
-export default ContactPage
+export default ContactPage;
