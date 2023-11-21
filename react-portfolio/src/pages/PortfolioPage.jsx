@@ -3,13 +3,20 @@ import { projects } from "../assets/projectData"
 
 
 const PortfolioPage = () => {
+    const projectContainerStyle = {
+        display: 'flex',
+        flexFlow: 'row wrap'
+    }
+
     return (
-        <div className="project-container">
+        <>
             <h1 className="">Previous Projects</h1>
-            {projects.map((project) => (
-                <Project key={project.title} project={project} />
-            ))}
-        </div>
+            <div className="container" style={projectContainerStyle}>
+                {projects.map((project) => (
+                    <Project key={project.title} project={project} />
+                ))}
+            </div>
+        </>
     );
 }
 
