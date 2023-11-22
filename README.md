@@ -54,6 +54,8 @@ The following is a preview of the finished site:
 
 The lastest version of the webpage is active at:
 
+https://main--omar-razo.netlify.app/
+
 ## Installation
 
 App is hosted by Netlify and can be accessed/used with no installation.
