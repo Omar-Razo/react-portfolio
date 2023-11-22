@@ -36,7 +36,14 @@ const ResumePage = () => {
                 </ul>
             </div>
             <div>
+            <a
+                href="/example.md"
+                download="example-file-download.md"
+                target="_blank"
+                rel="noreferrer"
+            >
                 <button className="m-3">Download Resume</button>
+            </a>
             </div>
         </div>
     );
